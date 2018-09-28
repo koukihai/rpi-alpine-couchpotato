@@ -4,11 +4,11 @@ FROM hypriot/rpi-alpine
 # Install packages
 RUN apk add --update \
     git \
-    python 
+    python \
+    py-lxml
 
-# Download and install lxml
-RUN wget http://nl.alpinelinux.org/alpine/v3.3/main/armhf/py-lxml-3.5.0-r0.apk -O /var/cache/apk/py-lxml.apk
-RUN apk add --allow-untrusted /var/cache/apk/py-lxml.apk
+# Remove cache
+RUN rm -rf /var/cache/apk/*
 
 # Cleanup
 RUN rm -rf /var/cache/apk/*
