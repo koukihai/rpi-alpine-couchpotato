@@ -7,9 +7,6 @@ RUN apk add --update \
     python \
     py-lxml
 
-# Remove cache
-RUN rm -rf /var/cache/apk/*
-
 # Cleanup
 RUN rm -rf /var/cache/apk/*
 
@@ -24,10 +21,10 @@ RUN mkdir -p /config /blackhole /sorted /unsorted /app && \
     chgrp -R users /sorted /unsorted /blackhole && \
     chown -R couchpotato:users /config /app
 
-# Continue as user 'headphones'
+# Continue as user 'couchpotato'
 USER couchpotato
 
-RUN git clone --depth 1 -b master --single-branch https://github.com/RuudBurger/CouchPotatoServer.git /app 
+RUN git clone --depth 1 -b master --single-branch https://github.com/CouchPotato/CouchPotatoServer.git /app
 
 VOLUME /config /blackhole /sorted /unsorted
 
