@@ -11,7 +11,6 @@ RUN apk add --update \
 # Cleanup
 RUN rm -rf /var/cache/apk/*
 
-
 # Create user
 RUN id couchpotato || adduser -S -s /bin/false -H -D couchpotato
 RUN addgroup couchpotato users
@@ -31,5 +30,4 @@ VOLUME /config /blackhole /sorted /unsorted
 
 EXPOSE 5050
 
-CMD [ "--data_dir=/config", "--config_file=/config/CouchPotato.cfg", "--console_log" ]
-ENTRYPOINT ["/usr/bin/env","python2","/app/CouchPotato.py"]
+CMD ["/usr/bin/env","python2","/app/CouchPotato.py", "--data_dir=/config", "--config_file=/config/CouchPotato.cfg", "--console_log" ]
