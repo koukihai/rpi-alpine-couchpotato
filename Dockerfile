@@ -5,7 +5,8 @@ FROM hypriot/rpi-alpine
 RUN apk add --update \
     git \
     python \
-    py-lxml
+    py-lxml \
+    py-openssl
 
 # Cleanup
 RUN rm -rf /var/cache/apk/*
