@@ -1,9 +1,9 @@
-FROM hypriot/rpi-alpine
-
+FROM multiarch/alpine:armhf-latest-stable
 
 # Install packages
 RUN apk add --update \
     git \
+    openssl \
     python \
     py-lxml \
     py-openssl
