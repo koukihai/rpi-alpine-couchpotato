@@ -1,5 +1,8 @@
 # rpi-alpine-couchpotato
 
+# DEPRECATED: Please use https://hub.docker.com/r/lsioarmhf/couchpotato/ instead
+
+
 [![Build Status](https://travis-ci.org/koukihai/rpi-alpine-couchpotato.svg?branch=master)](https://travis-ci.org/koukihai/rpi-alpine-couchpotato)
 
 Download movies automatically, easily and in the best quality as soon as they are available with [Couchpotato](https://couchpota.to/)
